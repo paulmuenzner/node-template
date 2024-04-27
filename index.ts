@@ -4,6 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import os from 'os';
 import { ApiError, InternalError, Logger, NotFoundError } from './config';
+import setupSwagger from './utils/swagger';
 
 const logger = new Logger();
 const numberOfCores = os.cpus().length;
@@ -13,7 +14,6 @@ import { config } from './config';
 const app = express();
 
 // Limit requests from same API
-
 if (cluster.isPrimary && numberOfCores > 1) {
   for (let i = 0; i < numberOfCores; i++) {
     // fork child process
@@ -61,10 +61,13 @@ if (cluster.isPrimary && numberOfCores > 1) {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
+  // Swagger
+  setupSwagger(app, Number(config.port));
+
   // Load routes
-  const defaultRoutes = require('./routes/defaultRoutes');
+  const healthRoutes = require('./routes/healthRoutes');
   const authRoutes = require('./routes/authRoutes');
-  app.use('/api/default', defaultRoutes);
+  app.use('/api/health', healthRoutes);
   app.use('/api/auth', config.authLimiter, authRoutes);
 
   // Error handling
@@ -93,6 +96,6 @@ if (cluster.isPrimary && numberOfCores > 1) {
       console.log(`Open: http://localhost:${config.port}`);
     });
   } else {
-    app.listen(config.port);
+    app.listen(config.port, () => {});
   }
 }
