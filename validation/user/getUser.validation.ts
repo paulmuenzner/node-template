@@ -59,4 +59,4 @@ export const getUserSchema = object({
   }),
 });
 
-export type GetUserInput = Omit<TypeOf<typeof getUserSchema>, 'body.passwordConfirmation'>;
+export type GetUserInput = TypeOf<typeof getUserSchema>['body'];

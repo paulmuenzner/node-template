@@ -1,1 +1,1 @@
-export { GetUserInput, getUserSchema } from './user.validation';
+export { GetUserInput, getUserSchema } from './user/getUser.validation';
