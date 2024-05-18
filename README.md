@@ -131,7 +131,7 @@ Project Link: [https://github.com/paulmuenzner/node-template](https://github.com
 [mongodb-url]: https://go.dev/
 [github-shield]: https://img.shields.io/badge/paulmuenzner-black.svg?logo=github&logoColor=ffffff&colorB=000000
 [github-url]: https://github.com/paulmuenzner?tab=repositories
-[contributors-shield]: https://img.shields.io/github/contributors/paulmuenzner/ingGCoolridManager.svg
+[contributors-shield]: https://img.shields.io/github/contributors/paulmuenzner/node-template.svg
 [contributors-url]: https://github.com/paulmuenzner/node-template/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/paulmuenzner/node-template.svg
 [issues-url]: https://github.com/paulmuenzner/node-template/issues
