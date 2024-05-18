@@ -1,3 +1,3 @@
-import { health } from './healthController';
+import { health } from './health.controller';
 
 export default { health };

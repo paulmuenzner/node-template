@@ -1,1 +1,1 @@
-export { CreateUserInput, createUserSchema } from './user.schema';
+export { GetUserInput, getUserSchema } from './user.validation';
