@@ -65,10 +65,10 @@ if (cluster.isPrimary && numberOfCores > 1) {
   setupSwagger(app, Number(config.port));
 
   // Load routes
-  const healthRoutes = require('./routes/healthRoutes');
-  const authRoutes = require('./routes/authRoutes');
+  const healthRoutes = require('./routes/health.routes');
+  const userRoutes = require('./routes/user.routes');
   app.use('/api/health', healthRoutes);
-  app.use('/api/auth', config.authLimiter, authRoutes);
+  app.use('/api/users', config.authLimiter, userRoutes);
 
   // Error handling
   app.all('*', (req: Request, res: Response, next: NextFunction) => {

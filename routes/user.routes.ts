@@ -32,6 +32,6 @@ const router = express.Router();
  *      500:
  *        description: Internal server error
  */
-router.get('/getUser', validate(getUserSchema), userControllers.getUser);
+router.get('/getuser', validate(getUserSchema), userControllers.getUser);
 
 module.exports = router;

@@ -93,5 +93,5 @@ export default class ControllerLogger {
 }
 
 // Example usage
-const logger = new ControllerLogger();
-logger.warn('test msg', 'LoginController'); // Now logs with the controller name
+// const logger = new ControllerLogger();
+// logger.warn('test msg', 'LoginController'); // Now logs with the controller name

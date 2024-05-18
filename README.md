@@ -2,42 +2,32 @@
 
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-<!-- [![Golang][golang-shield]][golang-url] -->
-![](https://img.shields.io/badge/Code-PowerShell-informational?style=flat&logo=PowerShell&logoColor=white&color=2bbc8a) 
-![](https://img.shields.io/badge/Cloud-MicrosoftAzure-informational?style=flat&logo=MicrosoftAzure&logoColor=white&color=2bbc8a) 
 [![Issues][issues-shield]][issues-url]
-[![MIT][license-shield]][license-url] 
+[![GNU License][license-shield]][license-url]
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/paulmuenzner/node-template)
+![GitHub top language](https://img.shields.io/github/languages/top/paulmuenzner/node-template)
 [![paulmuenzner github][github-shield]][github-url] 
 [![Contributors][contributors-shield]][contributors-url]
-[![paulmuenzner.com][website-shield]][website-url]
 
-
-![Header](public/header-powershell-scripts-azure.png)
 
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/paulmuenzner/node-ts-template">
-    <img src="public/logo.png" alt="Logo" width="128" height="128">
-  </a>
 
-  <h3 align="center">Azure Powershell Scripts</h3>
+  <h3 align="center">Node.js Template</h3>
 
   <p align="center">
-    VMSS - WebApp - Azure AD
+    Clustering - Logging - Rate Limiter - Error/Response Handler
     <br />
     <a href="#about-the-project"><strong>EXPLORE DOCS</strong></a>
     <br />
     <br />
-    <a href="#settings">Automation</a>
+    <a href="#about-the-project">Plenty of features</a>
     ·
-    <a href="https://github.com/paulmuenzner/node-ts-template/issues">Report Bug</a>
+    <a href="https://github.com/paulmuenzner/node-template/issues">Report Bug</a>
     ·
-    <a href="https://github.com/paulmuenzner/node-ts-template/issues">Request Feature</a>
+    <a href="https://github.com/paulmuenzner/node-template/issues">Request Feature</a>
   </p>
 </div>
 
@@ -47,8 +37,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#scripts">Scripts</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -60,61 +49,55 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Embark on an inspired Azure journey with this collection of meticulously crafted PowerShell scripts, developed during my free time with passion and dedication. Designed to make life easier, these scripts draw from real-world experiences, offering practical solutions to streamline and optimize your Azure resource management and deployment processes.
+This repository provides a comprehensive Node.js template designed for building robust and scalable web applications. It integrates essential features and best practices to streamline the development process. This template is fully implemented in TypeScript and includes various functionalities such as route validation, CORS, security enhancements, logging, and more.
 
 
-## Scripts
-
--   **Logging**: .
-
--   **Security**: Rate limiting global and specific auth routes , helmet, parameter pollution
-
--   **Multi-core CPU's capabilities**: The cluster module in Node.js allows you to create multiple worker processes (or "clusters") that share the same server port and handle incoming requests concurrently. This leverages your multi-core CPU's capabilities for improved performance.
-
--   **Azure-Custom-Script-Extension-Scale-Set**: Retrieves a secret from Azure Key Vault using managed identity and configures SSH to use it for GitHub deployments.
-
--   **Azure-Delete-Empty-Storage-Containers-AAD**: Deletes empty containers from a storage account protected with Azure Active Directory (AAD).
-
--   **Azure-Get-Storage-Container-TotalSize**: This PowerShell script calculates the total size of all blobs within a specified Azure storage container.
-
--   **Azure-Get-Vmss-InstancesIPs**: Lists IP addresses of all instances in an Azure VM scale set within a virtual network behind a load balancer.
-
--   **Azure-Provision-Daily-Containers-Past-Year**: Creates a storage account with system-assigned managed identity and a container for each day in the last year from today.
-
--   **Azure-Scan-Vmss-Ports-To-CSV**: Scans ports 1-1000 of a specified VM and writes open ports to a CSV file within an Azure storage container.
-
--   **Azure-Vmss-Add-Autoscale-Rule**: Configures a Windows VM Scale Set in Azure to use custom autoscale with a scaling rule based on CPU utilization.
+### Features
+- **Health Check Route**: Easily monitor the health of your application with a dedicated health check endpoint.
+- **Swagger Implementation**: Automatically generated API documentation available at `http://localhost:8000/docs`.
+- **Route Validation**: Ensure the integrity of incoming requests with robust route validation.
+- **CORS**: Configurable Cross-Origin Resource Sharing support for your application.
+- **TypeScript**: Fully implemented in TypeScript for improved developer experience and code quality.
+- **Helmet**: Enhanced security with Helmet middleware, including permitted cross-domain policies.
+- **Rate Limiter**: Prevent abuse and ensure fair usage with a built-in rate limiting mechanism.
+- **Node Cluster**: Leverage the Node.js cluster module to create child processes that run simultaneously and share the same server port, enhancing the performance of your application.
+- **Body Parser**: Parse incoming request bodies in a middleware before your handlers, available under the `req.body` property.
+- **Logging**: Comprehensive logging setup with Winston and daily rotating log files for better traceability and debugging.
+- **Express**: Built with Express, a fast and minimalist web framework for Node.js.
+- **Nodemon**: Automatically restart the server during development when file changes in the directory are detected.
+- **Prettier**: Maintain consistent code formatting with Prettier.
+- **Async Error Handling**: All controllers are wrapped in a `catchAsync` utility to handle errors gracefully and keep the codebase clean.
+- **Custom Response Handler**: Consistent API responses with a custom response handler that defines standard response structures for success, failure, internal errors, authentication errors, and more.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- USAGE -->
+## Usage
 
+Clone the repository and install the dependencies:
 
-<!-- ROADMAP -->
-## Roadmap
-Adding Scripts for
--   ✅ Managing Storage Accounts
--   ✅ Handling WebApp
--   ⬜️ VM Software Installation and Updates
--   ⬜️ Log Collection and Analysis
--   ⬜️ Cost Management
--   ⬜️ Backup and Restore Operations
--   ⬜️ Resource Tagging and Management
--   ⬜️ Network Configuration Management
--   ⬜️ Data Migration
+```bash
+git clone https://github.com/paulmuenzner/node-template.git
+cd node-template
+npm install
+```
 
-See the [open issues](https://github.com/paulmuenzner/node-ts-template/issues) to report bugs or request fatures.
+Build and start:
+
+```bash
+npm run build
+npm run start
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions to the Node.js template project are welcome! Whether you're interested in adding new features, fixing bugs, or improving documentation, your contributions are highly valued. To get started, fork the repository, make your changes, and submit a pull request. 
 
-Contributions are more than welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for
-more info.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more info.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,7 +106,7 @@ more info.
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See [LICENSE](LICENSE.txt) for more information.
+Distributed under the GNU General Public License v2.0. See [LICENSE](LICENSE.txt) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -134,21 +117,25 @@ Distributed under the MIT License. See [LICENSE](LICENSE.txt) for more informati
 
 Paul Münzner: [https://paulmuenzner.com](https://paulmuenzner.com) 
 
-Project Link: [https://github.com/paulmuenzner/node-ts-template](https://github.com/paulmuenzner/node-ts-template)
+Project Link: [https://github.com/paulmuenzner/node-template](https://github.com/paulmuenzner/node-template)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[mongodb-shield]: https://img.shields.io/badge/mongodb-black.svg?logo=mongodb&logoColor=ffffff&colorB=47A248
+[mongodb-url]: https://go.dev/
 [github-shield]: https://img.shields.io/badge/paulmuenzner-black.svg?logo=github&logoColor=ffffff&colorB=000000
-[github-url]: https://github.com/paulmuenzner
-[contributors-shield]: https://img.shields.io/github/contributors/paulmuenzner/node-ts-template.svg
-[contributors-url]: https://github.com/paulmuenzner/node-ts-template/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/paulmuenzner/node-ts-template.svg
-[issues-url]: https://github.com/paulmuenzner/node-ts-template/issues
-[license-shield]: https://img.shields.io/badge/MIT-license-blue.svg
-[license-url]: https://github.com/paulmuenzner/node-ts-template/blob/master/LICENSE.txt
-[website-shield]: https://img.shields.io/badge/www-paulmuenzner.com-blue
-[website-url]: https://paulmuenzner.com 
+[github-url]: https://github.com/paulmuenzner?tab=repositories
+[contributors-shield]: https://img.shields.io/github/contributors/paulmuenzner/ingGCoolridManager.svg
+[contributors-url]: https://github.com/paulmuenzner/node-template/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/paulmuenzner/node-template.svg
+[issues-url]: https://github.com/paulmuenzner/node-template/issues
+[license-shield]: https://img.shields.io/badge/license-GPL_2.0-orange.svg?colorB=FF5733
+[license-url]: https://github.com/paulmuenzner/node-template/blob/master/LICENSE.txt
+<!-- [website-shield]: https://img.shields.io/badge/www-paulmuenzner.com-blue
+[website-url]: https://paulmuenzner.com -->
