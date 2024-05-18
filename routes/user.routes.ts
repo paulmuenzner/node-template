@@ -7,24 +7,24 @@ const router = express.Router();
 
 /**
  * @openapi
- * '/api/auth/login':
- *  post:
+ * '/api/auth/getUser':
+ *  get:
  *     tags:
- *     - Login
- *     summary: Login as user
+ *     - Get User
+ *     summary: Get user
  *     requestBody:
  *      required: true
  *      content:
  *        application/json:
  *           schema:
- *              $ref: '#/components/schemas/CreateUserInput'
+ *              $ref: '#/components/validation/GetUserInput'
  *     responses:
  *      200:
  *        description: Success
  *        content:
  *          application/json:
  *            schema:
- *              $ref: '#/components/schemas/CreateUserResponse'
+ *              $ref: '#/components/validation/GetUserResponse'
  *      409:
  *        description: Conflict
  *      400:
