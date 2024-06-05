@@ -8,7 +8,7 @@ export function catchAsync(fn: AsyncMiddleware): RequestHandler {
     if (typeof fn === 'function' && fn.constructor.name === 'AsyncFunction') {
       fn(req, res, next).catch(next);
     } else {
-      // If not, call it directly without catch
+      // If not a Promise, call it directly without catch
       fn(req, res, next);
     }
   };
