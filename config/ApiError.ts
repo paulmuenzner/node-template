@@ -11,8 +11,8 @@ import {
 import { config } from './config';
 
 enum ErrorType {
-  BAD_TOKEN = 'BadTokenError',
   TOKEN_EXPIRED = 'TokenExpiredError',
+  BAD_TOKEN = 'BadTokenError',
   UNAUTHORIZED = 'AuthFailureError',
   ACCESS_TOKEN = 'AccessTokenError',
   INTERNAL = 'InternalError',
