@@ -18,7 +18,7 @@
   <h3 align="center">Node.js Template</h3>
 
   <p align="center">
-    Clustering - Logging - Rate Limiter - Error/Response Handler
+    Clustering - Logging - Testing - Error/Response Handler
     <br />
     <a href="#about-the-project"><strong>EXPLORE DOCS</strong></a>
     <br />
@@ -56,6 +56,7 @@ This repository provides a comprehensive Node.js template designed for building 
 - **Express**: Built with Express, a fast and minimalist web framework for Node.js.
 - **TypeScript**: Fully implemented in TypeScript for improved developer experience and code quality.
 - **Dependency Injection & Inversion of Control**: Decoupled components. Programmed against interfaces with architectural boundary.
+- **Testing**: Jest implemented for solid state-of-the-art testing.
 - **Route Validation**: Ensure the integrity of incoming requests with robust route validation.
 - **CORS**: Configurable Cross-Origin Resource Sharing support for your application.
 - **Helmet**: Enhanced security with Helmet middleware, including permitted cross-domain policies.
@@ -87,6 +88,18 @@ Build and start:
 ```bash
 npm run build
 npm run start
+```
+
+Test:
+
+```bash
+npx jest
+```
+
+Test coverage:
+
+```bash
+npx jest --coverage
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

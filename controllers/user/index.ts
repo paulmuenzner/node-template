@@ -19,7 +19,7 @@ class UserController {
   getUser = catchAsync(async (req, res, next) => {
     try {
       const users = await this.userRepo.getUsers();
-      res.status(200).json(users);
+      res.status(200).json({ users });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
