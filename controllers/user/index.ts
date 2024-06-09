@@ -1,6 +1,6 @@
-import { Logger } from '../../config';
-import { IUserRepo } from '../../repos';
-import { catchAsync } from '../../utils';
+import { Logger } from '@config';
+import { IUserRepo } from '@repos';
+import { catchAsync } from '@utils';
 const logger = new Logger();
 
 /**

@@ -4,6 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import os from 'os';
 import { ApiError, InternalError, Logger, NotFoundError } from './config';
+import './register-aliases';
 import setupSwagger from './utils/swagger';
 
 const logger = new Logger();

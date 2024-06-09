@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Node.js Template by Paul Münzner",
   "main": "index.js",
+  "_moduleAliases": {
+    "@root": ".",
+    "@utils": "dist/utils"
+  },
+  "_moduleDirectories": ["node_modules_custom"],
   "scripts": {
     "test": "test",
     "build": "tsc -w --project ./",
@@ -23,6 +28,8 @@
     "express": "^4.19.2",
     "express-rate-limit": "^7.2.0",
     "helmet": "^7.1.0",
+    "module-alias": "^2.2.3",
+    "tsconfig-paths": "^4.2.0",
     "winston": "^3.13.0",
     "winston-daily-rotate-file": "^5.0.0",
     "zod": "^3.23.4"
@@ -34,6 +41,7 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
+    "@types/module-alias": "^2.0.4",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.6",
     "babel-jest": "^29.7.0",

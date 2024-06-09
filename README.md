@@ -56,6 +56,7 @@ This repository provides a comprehensive Node.js template designed for building 
 - **Express**: Built with Express, a fast and minimalist web framework for Node.js.
 - **TypeScript**: Fully implemented in TypeScript for improved developer experience and code quality.
 - **Dependency Injection & Inversion of Control**: Decoupled components. Programmed against interfaces with architectural boundary.
+- **Aliases**: Path and module aliases for simpler imports.
 - **Testing**: Jest implemented for solid state-of-the-art testing.
 - **Route Validation**: Ensure the integrity of incoming requests with robust route validation.
 - **CORS**: Configurable Cross-Origin Resource Sharing support for your application.
