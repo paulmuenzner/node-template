@@ -25,7 +25,7 @@ beforeEach(() => {
   userController = new UserController(new MockUserRepo());
 });
 
-test('Should 200 with an empty array of users', async () => {
+test('GET /users/getuser Should 200 with an empty array of users', async () => {
   const req = mockRequest();
   const res = mockResponse();
   await userController.getUser(req, res, mockNext);

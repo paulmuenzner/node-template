@@ -1,7 +1,12 @@
 import express from 'express';
-import userControllers from '../controllers/user';
+import UserController from '../controllers/user';
 import { validate } from '../utils';
 import { getUserSchema } from '../validation';
+
+import { UserRepo } from '../repos';
+
+const userRepo = new UserRepo();
+const userController = new UserController(userRepo);
 
 const router = express.Router();
 
@@ -32,6 +37,6 @@ const router = express.Router();
  *      500:
  *        description: Internal server error
  */
-router.get('/getuser', validate(getUserSchema), userControllers.getUser);
+router.get('/getuser', validate(getUserSchema), userController.getUser);
 
 module.exports = router;

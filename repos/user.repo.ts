@@ -10,7 +10,7 @@ export interface IUserRepo {
   getUsers(): Promise<IUser[]>;
 }
 
-class UserRepo implements IUserRepo {
+export class UserRepo implements IUserRepo {
   constructor() {}
 
   async getUsers(): Promise<IUser[]> {
