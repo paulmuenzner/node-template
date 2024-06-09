@@ -1,8 +1,8 @@
+import { Logger } from '@config';
+import { version } from '@package.json';
 import express, { Express, Request, Response } from 'express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
-import { Logger } from '../config';
-import { version } from '../package.json';
 const app = express();
 
 const log = new Logger();

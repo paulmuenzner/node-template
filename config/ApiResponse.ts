@@ -1,5 +1,5 @@
+import { config } from '@config';
 import { Response } from 'express';
-import { config } from '../config';
 
 // Helper code for the API consumer to understand the error and handle it accordingly
 enum StatusCode {

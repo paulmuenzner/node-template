@@ -1,6 +1,6 @@
+import UserController from '@controllers/user/index';
+import { MockUserRepo } from '@repos/mocks/mockUserRepo';
 import { NextFunction, Request } from 'express';
-import UserController from '../../controllers/user/index';
-import { MockUserRepo } from '../../repos/mocks/mockUserRepo';
 
 let userController: UserController;
 

@@ -1,5 +1,5 @@
-import { Logger } from '../../config';
-import { catchAsync } from '../../utils';
+import { Logger } from '@config';
+import { catchAsync } from '@utils';
 const logger = new Logger();
 
 /**
