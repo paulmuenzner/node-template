@@ -53,17 +53,17 @@ This repository provides a comprehensive Node.js template designed for building 
 
 
 ### Features
-- **Health Check Route**: Easily monitor the health of your application with a dedicated health check endpoint.
-- **Swagger Implementation**: Automatically generated API documentation available at `http://localhost:8000/docs`.
+- **Express**: Built with Express, a fast and minimalist web framework for Node.js.
+- **TypeScript**: Fully implemented in TypeScript for improved developer experience and code quality.
+- **Dependency Injection & Inversion of Control**: Decoupled components. Programmed against interfaces with architectural boundary.
 - **Route Validation**: Ensure the integrity of incoming requests with robust route validation.
 - **CORS**: Configurable Cross-Origin Resource Sharing support for your application.
-- **TypeScript**: Fully implemented in TypeScript for improved developer experience and code quality.
 - **Helmet**: Enhanced security with Helmet middleware, including permitted cross-domain policies.
 - **Rate Limiter**: Prevent abuse and ensure fair usage with a built-in rate limiting mechanism.
+- **Health Check Route**: Easily monitor the health of your application with a dedicated health check endpoint.
+- **Swagger Implementation**: Automatically generated API documentation available at `http://localhost:8000/docs`.
 - **Node Cluster**: Leverage the Node.js cluster module to create child processes that run simultaneously and share the same server port, enhancing the performance of your application.
-- **Body Parser**: Parse incoming request bodies in a middleware before your handlers, available under the `req.body` property.
 - **Logging**: Comprehensive logging setup with Winston and daily rotating log files for better traceability and debugging.
-- **Express**: Built with Express, a fast and minimalist web framework for Node.js.
 - **Nodemon**: Automatically restart the server during development when file changes in the directory are detected.
 - **Prettier**: Maintain consistent code formatting with Prettier.
 - **Async Error Handling**: All controllers are wrapped in a `catchAsync` utility to handle errors gracefully and keep the codebase clean.

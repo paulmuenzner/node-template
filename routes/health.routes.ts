@@ -1,7 +1,9 @@
 import express from 'express';
-import healthControllers from '../controllers/health';
+import HealthController from '../controllers/health';
 
 const router = express.Router();
+
+const healthController = new HealthController();
 
 /**
  * @openapi
@@ -17,6 +19,6 @@ const router = express.Router();
  *         description: Internal server error
  */
 
-router.get('/', healthControllers.health);
+router.get('/', healthController.healthStatus);
 
 module.exports = router;
