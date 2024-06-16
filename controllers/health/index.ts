@@ -1,6 +1,5 @@
-import { Logger } from '@config';
 import { catchAsync } from '@utils';
-const logger = new Logger();
+import os from 'os';
 
 /**
  * @class HealthController
@@ -11,7 +10,28 @@ const logger = new Logger();
 class HealthController {
   healthStatus = catchAsync(async (req, res, next) => {
     try {
-      res.sendStatus(200).json({ message: 'App alive' });
+      // Get the memory usage object
+      const memoryUsageBytes = process.memoryUsage();
+
+      // Convert each property to megabytes
+      const memoryUsageMB = {
+        rss: memoryUsageBytes.rss / (1024 * 1024),
+        heapTotal: memoryUsageBytes.heapTotal / (1024 * 1024),
+        heapUsed: memoryUsageBytes.heapUsed / (1024 * 1024),
+        external: memoryUsageBytes.external / (1024 * 1024),
+        arrayBuffers: memoryUsageBytes.arrayBuffers / (1024 * 1024),
+      };
+
+      const healthInfo = {
+        status: 'App alive',
+        uptime: process.uptime(),
+        memoryUsageMB,
+        loadAverage: os.loadavg(),
+        freeMemoryMB: os.freemem() / (1024 * 1024),
+        totalMemoryMB: os.totalmem() / (1024 * 1024),
+        cores: os.cpus().length,
+      };
+      res.status(200).json(healthInfo);
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
