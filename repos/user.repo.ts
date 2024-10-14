@@ -6,7 +6,7 @@ import { IUser } from '../interfaces';
  **/
 
 export interface IUserRepo {
-  // Exported
+  // Exported Methods
   getUsers(): Promise<IUser[]>;
 }
 
