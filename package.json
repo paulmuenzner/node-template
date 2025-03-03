@@ -7,7 +7,9 @@
     "@root": ".",
     "@utils": "dist/utils"
   },
-  "_moduleDirectories": ["node_modules_custom"],
+  "_moduleDirectories": [
+    "node_modules_custom"
+  ],
   "scripts": {
     "test": "test",
     "build": "tsc -w --project ./",
@@ -27,7 +29,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-rate-limit": "^7.2.0",
-    "helmet": "^7.1.0",
+    "helmet": "^8.0.0",
     "module-alias": "^2.2.3",
     "tsconfig-paths": "^4.2.0",
     "winston": "^3.13.0",
