@@ -14,13 +14,15 @@ class HealthController {
       const memoryUsageBytes = process.memoryUsage();
 
       // Convert each property to megabytes
+      const MB = 1024 * 1024;
       const memoryUsageMB = {
-        rss: memoryUsageBytes.rss / (1024 * 1024),
-        heapTotal: memoryUsageBytes.heapTotal / (1024 * 1024),
-        heapUsed: memoryUsageBytes.heapUsed / (1024 * 1024),
-        external: memoryUsageBytes.external / (1024 * 1024),
-        arrayBuffers: memoryUsageBytes.arrayBuffers / (1024 * 1024),
+        rss: memoryUsageBytes.rss / MB,
+        heapTotal: memoryUsageBytes.heapTotal / MB,
+        heapUsed: memoryUsageBytes.heapUsed / MB,
+        external: memoryUsageBytes.external / MB,
+        arrayBuffers: memoryUsageBytes.arrayBuffers / MB,
       };
+
 
       const healthInfo = {
         status: 'App alive',
