@@ -44,15 +44,19 @@ if (cluster.isPrimary && numberOfCores > 1) {
     }),
   );
 
-  // Cors
-  app.use(
-    cors({
-      origin: config.corsWhitelist,
-      optionsSuccessStatus: 200,
-      methods: 'POST, GET',
-      credentials: true,
-    }),
-  );
+  // CORS with dynamic whitelist and credential support
+  app.use(cors({
+    origin: (origin, callback) => {
+      if (!origin || config.corsWhitelist.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    optionsSuccessStatus: 200,
+    methods: 'POST, GET',
+    credentials: true,
+  }));
 
   // Use built-in express middleware for body parsing
   app.use(express.urlencoded({ extended: true }));
