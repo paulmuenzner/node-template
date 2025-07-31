@@ -30,20 +30,16 @@ if (cluster.isPrimary && numberOfCores > 1) {
   ////// SECURITY CONFIG
   ////////////////////////////
 
-  // Rate limiting
-  app.use('/api', config.globalLimiter);
-
-  // Set Security HTTP headers https://helmetjs.github.io
-  app.use(helmet());
-
-  // Permitted-Cross-Domain-Policies
-  app.use(helmet.permittedCrossDomainPolicies());
-
-  // Set Content Security policy
+  // Apply standard HTTP security headers with Helmet
   app.use(
-    helmet.contentSecurityPolicy({
-      directives: {
-        defaultSrc: ["'self'"],
+    helmet({
+     contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+        },
+      },
+      permittedCrossDomainPolicies: {
+        permittedPolicies: "none", // oder "master-only", etc.
       },
     }),
   );
