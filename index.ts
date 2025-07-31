@@ -1,4 +1,3 @@
-import bodyParser from 'body-parser';
 import cluster from 'cluster';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -59,8 +58,9 @@ if (cluster.isPrimary && numberOfCores > 1) {
     }),
   );
 
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
+  // Use built-in express middleware for body parsing
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
 
   // Swagger
   setupSwagger(app, Number(config.port));
