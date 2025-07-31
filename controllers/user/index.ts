@@ -9,6 +9,15 @@ const logger = new Logger();
  * /user route.
  **/
 
+class NotFoundError extends Error {
+  statusCode: number;
+
+  constructor(message: string) {
+    super(message);
+    this.statusCode = 404;
+  }
+}
+
 class UserController {
   private userRepo: IUserRepo;
 
@@ -18,8 +27,13 @@ class UserController {
 
   getUser = catchAsync(async (req, res, next) => {
     const users = await this.userRepo.getUsers();
+
+    if (!users || users.length === 0) {
+      throw new NotFoundError('No users found');
+    }
+
     res.status(200).json({ users });
-  });
+});
 }
 
 export default UserController;
